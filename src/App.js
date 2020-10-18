@@ -6,6 +6,8 @@ import Login from "./routes/Login";
 import Register from "./routes/Register";
 import Auth from "./routes/Auth";
 import Challenges from "./routes/Challenges";
+import ChallengesList from "./routes/Challenges/List";
+import ChallengesItem from "./routes/Challenges/Item";
 
 const App = () => {
   return (
@@ -15,7 +17,10 @@ const App = () => {
         <Login path="login" />
         <Register path="register" />
 
-        <Auth Route={Challenges} path="/challenges" />
+        <Auth Route={Challenges} path="/challenges">
+          <ChallengesList path="/" />
+          <ChallengesItem path=":id" />
+        </Auth>
       </Router>
     </div>
   );
