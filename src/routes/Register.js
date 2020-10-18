@@ -20,7 +20,7 @@ const Register = (props) => {
   return (
     <div className="container flex flex-col justify-center items-center w-full mx-auto my-auto h-screen">
       <h1 className="text-6xl text-white font-bold pb-5">Register</h1>
-      <Form onSubmit={handleSubmit} />
+      <Form onSubmit={handleSubmit} submitText="Register" />
       <Link className="text-blue-500 hover:text-blue-700" to="/login">
         Already have an account?
       </Link>

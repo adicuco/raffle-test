@@ -20,7 +20,7 @@ const Login = (props) => {
   return (
     <div className="container flex flex-col justify-center items-center w-full mx-auto my-auto h-screen">
       <h1 className="text-6xl text-white font-bold pb-5">Login</h1>
-      <Form onSubmit={handleSubmit} />
+      <Form onSubmit={handleSubmit} submitText="Login" />
       <Link className="text-blue-500 hover:text-blue-700" to="/register">
         Don't have an account?
       </Link>
