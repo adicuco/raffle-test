@@ -4,10 +4,13 @@ import { Link } from "@reach/router";
 import { useDispatch } from "react-redux";
 
 import { register } from "../store/actions/auth";
+import { useAuth } from "../utils/hooks";
 
 import Form from "../components/Form";
 
 const Register = (props) => {
+  useAuth();
+
   const dispatch = useDispatch();
 
   const handleSubmit = ({ username, password }) => {

@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "@reach/router";
 
+import { useAuth } from "../utils/hooks";
+
 const HomePage = (props) => {
+  useAuth();
+
   return (
     <div className="container flex flex-col justify-center items-center w-full mx-auto my-auto h-screen">
       <h1 className="text-6xl text-white font-bold pb-5">Welcome</h1>
