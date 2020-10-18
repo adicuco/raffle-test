@@ -1,0 +1,5 @@
+export const ASYNC_TYPES = {
+  REQUEST: "REQUEST",
+  SUCCESS: "SUCCESS",
+  FAILURE: "FAILURE",
+};

@@ -1,13 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "@reach/router";
+import { useDispatch } from "react-redux";
+
+import { login } from "../store/actions/auth";
 
 import Form from "../components/Form";
 
 const Login = (props) => {
+  const dispatch = useDispatch();
+
   const handleSubmit = ({ username, password }) => {
-    console.log("password: ", password);
-    console.log("username: ", username);
+    dispatch(login({ username, password }));
   };
 
   return (
