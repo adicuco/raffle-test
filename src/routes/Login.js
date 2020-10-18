@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Link } from "@reach/router";
-import { useDispatch } from "react-redux";
+import { Link, navigate } from "@reach/router";
+import { useDispatch, useSelector } from "react-redux";
 
 import { login } from "../store/actions/auth";
 
@@ -9,6 +9,13 @@ import Form from "../components/Form";
 
 const Login = (props) => {
   const dispatch = useDispatch();
+  const { isAuth } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate("/challenges");
+    }
+  }, [isAuth]);
 
   const handleSubmit = ({ username, password }) => {
     dispatch(login({ username, password }));
