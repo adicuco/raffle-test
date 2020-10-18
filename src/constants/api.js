@@ -13,4 +13,8 @@ export default {
   register() {
     return `${baseUrlPart}/users/create`;
   },
+
+  challenges() {
+    return `${baseUrlPart}/challenges`;
+  },
 };

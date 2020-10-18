@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import { getAll } from "../../store/actions/challenges";
 
 const List = (props) => {
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-  return <div>hello {user.username}</div>;
+  const { list } = useSelector((state) => state.challenges);
+
+  useEffect(() => {
+    dispatch(getAll());
+  },[dispatch]);
+
+  return (
+    <div>
+      hello {user.username}, there are {list.length} challenges
+    </div>
+  );
 };
 
 List.propTypes = {};
