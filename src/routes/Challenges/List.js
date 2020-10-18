@@ -4,15 +4,32 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "@reach/router";
 
 import { getAll } from "../../store/actions/challenges";
+import { useKeyPress } from "../../utils/hooks";
 
-const List = (props) => {
+const List = ({ navigate }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { list } = useSelector((state) => state.challenges);
 
+  const key1 = useKeyPress(49);
+  const key2 = useKeyPress(50);
+  const key3 = useKeyPress(51);
+
   useEffect(() => {
     dispatch(getAll());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (key1) {
+      navigate("1");
+    }
+    if (key2) {
+      navigate("2");
+    }
+    if (key3) {
+      navigate("3");
+    }
+  }, [key1, key2, key3, navigate]);
 
   return (
     <div className="container flex flex-col justify-center items-center w-full mx-auto my-auto h-screen">
@@ -32,6 +49,10 @@ const List = (props) => {
           </Link>
         ))}
       </div>
+
+      <span className="text-sm text-white pt-5">
+        You can navigate using keyboard keys 1, 2, 3
+      </span>
     </div>
   );
 };
