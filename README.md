@@ -1,5 +1,5 @@
 # raffle.io test
-## Singleplayer Colors Clash
+
 My idea was to create a singleplayer version of [Colors Clash](https://colors-clash.netlify.app/) (naming in progress), a multiplayer game using socket.io which I developed this summer.
 
 For that, outside the scope of the test, I updated the game's api to include authentification with JWT tokens and store the credentials in a MongoDB database, along with adding the logic for the singleplayer version of the game. The endpoints I wanted to use for the test are:
