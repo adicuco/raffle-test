@@ -9,7 +9,7 @@ const Leaderboard = ({ players }) => {
       {players.map(({ username, score }, index) => (
         <div
           key={username}
-          className="flex justify-between items-center font-bold text-xl w-1/2"
+          className="flex justify-between items-center font-bold text-xl w-11/12 sm:w-1/2"
         >
           <div className="flex flex-row items-center justify-center my-1">
             <span className="border border-blue-300 rounded-full h-10 w-10 flex items-center justify-center">

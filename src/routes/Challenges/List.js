@@ -33,7 +33,7 @@ const List = ({ navigate }) => {
 
   return (
     <div className="container flex flex-col justify-center items-center w-full mx-auto my-auto h-screen">
-      <h1 className="text-4xl text-white font-bold pb-5">
+      <h1 className="text-4xl text-white font-bold pb-5 text-center">
         Hello <span className="text-blue-500">{user?.username}</span>, choose a
         challenge
       </h1>
