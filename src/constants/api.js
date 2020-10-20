@@ -17,4 +17,8 @@ export default {
   challenges() {
     return `${baseUrlPart}/challenges`;
   },
+
+  challenge(id) {
+    return `${baseUrlPart}/challenges/${id}`;
+  },
 };
