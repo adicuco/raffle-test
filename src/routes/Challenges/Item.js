@@ -28,6 +28,7 @@ const Item = ({ id }) => {
   };
 
   const handleBack = () => {
+    dispatch(getById({ id }));
     setIsGame(false);
   };
 
