@@ -31,12 +31,12 @@ const Game = ({ state, onColor, onBack, onStart }) => {
             >
               Retry
             </button>
-            <button
-              className="text-blue-500 hover:text-blue-700 py-3"
+            <div
+              className="text-blue-500 hover:text-blue-700 py-3 text-center cursor-pointer"
               onClick={onBack}
             >
               Back
-            </button>
+            </div>
           </div>
         ) : (
           <>
@@ -60,6 +60,16 @@ const Game = ({ state, onColor, onBack, onStart }) => {
   );
 };
 
-Game.propTypes = {};
+Game.propTypes = {
+  state: PropTypes.shape({
+    matrix: PropTypes.array.isRequired,
+    color: PropTypes.number.isRequired,
+    round: PropTypes.number.isRequired,
+    done: PropTypes.bool.isRequired,
+  }).isRequired,
+  onColor: PropTypes.func.isRequired,
+  onStart: PropTypes.func.isRequired,
+  onBack: PropTypes.func.isRequired,
+};
 
 export default Game;
