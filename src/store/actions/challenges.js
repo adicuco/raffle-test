@@ -54,7 +54,7 @@ export const getById = ({ id }) => {
   };
 };
 
-export const postById = ({ id, color }) => {
+export const postById = ({ id, color = null }) => {
   return async (dispatch) => {
     dispatch({
       type: CHALLENGES_POST.REQUEST,
@@ -63,7 +63,7 @@ export const postById = ({ id, color }) => {
     try {
       const { data } = await axios.post(
         api.challenge(id),
-        { color },
+        { color: color?.toString() },
         {
           ...getAuthToken(),
         }

@@ -8,6 +8,12 @@ const initialState = {
   list: [],
   item: null,
   matrix: null,
+  state: {
+    matrix: null,
+    color: 0,
+    percentage: 0,
+    round: 0,
+  },
   loading: false,
 };
 
@@ -26,7 +32,7 @@ export default (state = initialState, { type, payload }) => {
       return { ...state, loading: false, matrix, item: rest };
 
     case CHALLENGES_POST.SUCCESS:
-      return { ...state, loading: false, matrix: payload };
+      return { ...state, loading: false, state: payload };
 
     case CHALLENGES_GET_ALL.FAILURE:
     case CHALLENGES_GET.FAILURE:

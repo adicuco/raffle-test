@@ -14,7 +14,7 @@ const Matrix = ({ matrix }) => {
               className="flex-1 rounded-sm m-1"
               style={{
                 backgroundColor: colors[color],
-                opacity: `${player ? 100 : 65}%`,
+                opacity: `${player ? 100 : 50}%`,
               }}
             />
           ))}

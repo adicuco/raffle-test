@@ -8,7 +8,7 @@ import { useKeyPress } from "../../utils/hooks";
 
 const List = ({ navigate }) => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth) || {};
   const { list } = useSelector((state) => state.challenges);
 
   const key1 = useKeyPress(49);
@@ -34,7 +34,7 @@ const List = ({ navigate }) => {
   return (
     <div className="container flex flex-col justify-center items-center w-full mx-auto my-auto h-screen">
       <h1 className="text-4xl text-white font-bold pb-5">
-        Hello <span className="text-blue-500">{user.username}</span>, choose a
+        Hello <span className="text-blue-500">{user?.username}</span>, choose a
         challenge
       </h1>
 
