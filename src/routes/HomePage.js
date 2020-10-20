@@ -1,10 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "@reach/router";
 
 import { useAuth } from "../utils/hooks";
 
-const HomePage = (props) => {
+const HomePage = () => {
   useAuth();
 
   return (
@@ -29,7 +28,5 @@ const HomePage = (props) => {
     </div>
   );
 };
-
-HomePage.propTypes = {};
 
 export default HomePage;

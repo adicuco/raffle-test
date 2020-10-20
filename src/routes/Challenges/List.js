@@ -57,6 +57,8 @@ const List = ({ navigate }) => {
   );
 };
 
-List.propTypes = {};
+List.propTypes = {
+  navigate: PropTypes.func,
+};
 
 export default List;

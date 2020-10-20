@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "@reach/router";
 import { useDispatch } from "react-redux";
 
@@ -27,7 +26,5 @@ const Register = (props) => {
     </div>
   );
 };
-
-Register.propTypes = {};
 
 export default Register;

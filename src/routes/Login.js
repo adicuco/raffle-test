@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "@reach/router";
 import { useDispatch } from "react-redux";
 
@@ -8,7 +7,7 @@ import { useAuth } from "../utils/hooks";
 
 import Form from "../components/Form";
 
-const Login = (props) => {
+const Login = () => {
   useAuth();
 
   const dispatch = useDispatch();
@@ -27,7 +26,5 @@ const Login = (props) => {
     </div>
   );
 };
-
-Login.propTypes = {};
 
 export default Login;
