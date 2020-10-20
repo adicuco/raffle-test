@@ -26,11 +26,20 @@ const Item = ({ id }) => {
     dispatch(postById({ id, color }));
   };
 
+  const handleBack = () => {
+    setIsGame(false);
+  };
+
   return (
     <div className="container flex flex-col justify-center items-center w-full mx-auto my-auto h-screen">
       {isGame && state.matrix ? (
         <>
-          <Game state={state} onColor={handleColor} />
+          <Game
+            state={state}
+            onColor={handleColor}
+            onStart={handleStart}
+            onBack={handleBack}
+          />
         </>
       ) : (
         <>
