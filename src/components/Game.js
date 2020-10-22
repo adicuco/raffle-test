@@ -4,13 +4,20 @@ import PropTypes from "prop-types";
 import colors from "../constants/colors";
 
 import Matrix from "./Matrix";
-
 const Game = ({ state, onColor, onBack, onStart }) => {
-  const { matrix, color, round, done } = state;
+  const { matrix, color, round, done, percentage } = state;
   const exclude = [color];
 
   return (
     <div className="flex flex-col w-full h-full justify-around">
+      <div className="flex justify-between items-center text-2xl font-bold">
+        <span className="min-w-1/4">round {round}</span>
+        <span className="text-3xl" style={{ color: colors[color] }}>
+          Colors Clash
+        </span>
+        <span className="min-w-1/4 text-right">{percentage.toFixed()}%</span>
+      </div>
+
       <div className="flex" style={{ height: "75%" }}>
         <Matrix matrix={matrix} />
       </div>
@@ -66,6 +73,7 @@ Game.propTypes = {
     color: PropTypes.number.isRequired,
     round: PropTypes.number.isRequired,
     done: PropTypes.bool.isRequired,
+    percentage: PropTypes.number.isRequired,
   }).isRequired,
   onColor: PropTypes.func.isRequired,
   onStart: PropTypes.func.isRequired,
