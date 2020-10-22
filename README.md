@@ -33,3 +33,8 @@ It is also possible to register new users (minimum password length is 6). The pa
 - [@reach/router](https://reach.tech/router/) - Routing
 - [react-redux](https://react-redux.js.org/) - State management
 - [axios](https://github.com/axios/axios) - HTTP client
+
+## Playable game
+As I had some free time and I couldn't just leave the game in that state without making it at least palyable, I created the [extra branch](../../tree/extra) which contains the code for the playable version.
+
+There's also a live version hosted on Netlify available at this [link](https://colors-sp.netlify.app/).
